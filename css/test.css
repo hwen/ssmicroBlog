@@ -1,0 +1,16 @@
+
+#test {
+	width: 60px;
+	height: 40px;
+}
+
+.content-box {
+	width: 35%;
+	margin: 10px auto;
+	background:white;
+	border:1px solid #73AD21;
+}
+
+.content-header {
+	background-color: #73AD21;
+}

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+<style type="text/css">
+	#sd,#ud{margin-top: 0;width: 100%;}
+#sd1,#sd2,#ud1,#ud2{width: 100%;height: 70px;background: #e9f4f7;display: none;}
+#sd1,#ud2{height: 20px;}
+#sd1>p,#sd2>p,#ud1>p,#ud2>p{margin: 20px auto;padding-top:8px;text-align:center;font-size: 14px;color: #37bbf5;}
+</style>
+	
+</head>
+<body>
+<div id="sd">
+	<div id="sd1">
+		<p>松开后刷新</p>
+	</div>
+	<div id="sd2">
+		<p>加载中...</p>
+	</div>
+</div>
+<div>
+	<p>
+		首先有一个目标div 
+
+这个 div 用来监听 touchstart ,touchmove ,touchend 三个事件.
+
+这3个 事件分别表示 手指触摸屏幕开始, 手指在屏幕移动 , 手指触摸结束
+
+那么这个 目标div 一旦被监听后,你的手指放在此div内,就会触发上面的事件.
+
+
+
+   2. 当触发某个事件时,我们希望看到上面一个下拉的拉伸效果,并且提示 "松开后刷新最新回复"
+
+        这个提示效果首先我们需要在 目标div 内方一段 html 
+
+
+    3 . 对应的我们需要一段css 来控制上面这个拉伸效果
+
+#sd,#ud{margin-top: 0;width: 100%;}
+#sd1,#sd2,#ud1,#ud2{width: 100%;height: 70px;background: #e9f4f7;display: none;}
+#sd1,#ud2{height: 20px;}
+#sd1>p,#sd2>p,#ud1>p,#ud2>p{margin: 20px auto;padding-top:8px;text-align:center;font-size: 14px;color: #37bbf5;}
+上面为2个id定义了样式 ( #sd ,#ud)
+
+是因为我在页面里同时实现了下拉和上推的效果,
+	</p>
+</div>
+
+<script type="text/javascript">
+	function slideDownStep1(dist){
+		var sd1 = document.getElementById('sd1'),
+			sd2 = document.getElementById('sd2');
+		sd2.style.display = "none";
+		sd1.style.display = "block";
+		sd1.style.height = 1 - parseInt(dist) + "px";
+	}
+
+	function slideDownStep2(){
+		var sd1 = document.getElementById('sd1'),
+			sd2 = document.getElementById('sd2');
+		sd1.style.display = "none";
+		sd1.style.height = "20px";
+		sd2.style.display = "block";
+	}
+
+	function slideDownStep3(){
+		var sd1 = document.getElementById('sd1'),
+			sd2 = document.getElementById('sd2');
+		sd1.style.display = "none";
+		sd2.style.display = "none";
+	}
+
+	function kt_touch(contentId, way){
+		var _start = 0,
+			_end = 0,
+			_content = document.getElementById(contentId);
+		_content.addEventListener("touchstart",touchstart,false);
+		_content.addEventListener("touchmove",touchMove,false);
+		_content.addEventListener("touchend",touchEnd,false);
+
+		function touchStart(event){
+			event.preventDefault();
+			if (!event.touches.length) { return; }
+			var touch = event.touches[0];
+			if (way == "x") {
+				_start = touch.pageX;
+			} else {
+				_start = touch.pageY;
+			}
+		}
+
+		function touchMove(event){
+			event.preventDefault();
+			if (!event.touches.length) { return; }
+
+			var touch = event.touches[0];
+
+			
+		}
+	}
+</script>
+</body>
+</html>
