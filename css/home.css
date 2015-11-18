@@ -54,84 +54,63 @@ p {
 
 /************control footer*************/
 .content-bar {
-	width: 100%;
 	border-top: 1px solid #dadada;
-	height: 4rem;
-	text-align: center;
+	display: flex;
+	display:-webkit-flex;
+	-webkit-align-items: center;
+	align-items: center;
+	-webkit-justify-content: center;
+	justify-content: center;
+	vertical-align: middle;
+}
+
+.content-bar a {
+	display: block;
+	text-decoration: none;
+	color: #929292;
+	height: 3rem;
+}
+
+.content-bar i{
+	font-style: normal;
+	font-size:.9rem;
 }
 
 .icon-box {
-	float: left;
+	flex:1;
+	-webkit-flex: 1;
+	width: 100%;
 }
 
 .icon {
-	background-size:5rem 1.6rem;
-	height:1.6rem;width:2rem;
+	height:2.6rem;width:4rem;
 	padding-left:1.25rem;
-	margin-left: 1rem;
-}
-
-.box-col {
-	width:30%;
-	position: relative;
-	float: left;
-}
-
-
-.content-bar a {
-	text-decoration: none;
-	color: #929292;
-}
-
-.content-bar label {
-	line-height: 1.8rem;
-}
-
-.content-bar i {
-	width: 1.5rem;
-	height: 1.2rem;	
 }
 
 .icon-repost {
 	background:url(../resource/retweet.png) no-repeat;
+	background-size:1rem .8rem;
+	margin-left: 2.5rem;
+
 }
 
 .icon-comment {
 	background:url(../resource/comment.png) no-repeat;
+	background-size:1rem .8rem;
+	margin-left: 3.5rem;
 }
 
 .icon-attitude {
 	background:url(../resource/attitude.png) no-repeat;
+	background-size:1rem .8rem;
+	margin-left: 2.5rem;
 }
 
 
-.box-icon-retweet {
-	background: url(../resource/retweet.png) no-repeat;	
-	background-size: 1rem .8rem;
-	float: left;
-	margin: .4rem .4rem;
+.line {
+	border-right:2px solid #dadada;
+	height: 1.5rem;
 }
-
-.box-icon-comment {
-	background: url(../resource/comment.png) no-repeat;	
-	background-size: 1rem .8rem;
-	float: left;
-	margin: .4rem .4rem;
-}
-
-.box-icon-attitude {
-	background: url(../resource/attitude.png) no-repeat;	
-	background-size: 1rem .8rem;
-	float: left;
-	margin: .4rem .4rem;
-}
-
-
-.box-icon-retweet:before {
-	content: "";
-}
-
-
 
 
 .content-box {

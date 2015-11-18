@@ -16,44 +16,47 @@
 		font-style:normal;
 	}
 
-	.content-bar {
-		width:100%;
-		text-align:center;
+	.icon {
+		background-size:10rem 8rem;
+		height:10rem;width:8rem;
+		padding-left:1.25rem;
+		margin-left: 1rem;
 	}
 
-	.icon-box {
-		background-color:white;
-		text-align:center;
-	}
-
-	.box-icon-retweet {
+	.icon-repost {
 		background:url(../resource/retweet.png) no-repeat;
-		background-size:25px 20px;
-		height:40px;width:50px;
-		float:left;
-		padding-left:10px;
-		margin-left:30px;
 	}
 
-	.box-col {
-		width:33%;
-		position:relative;
-		float:left;
-		margin:0 auto;
+	.icon-comment {
+		background:url(../resource/comment.png) no-repeat;
 	}
+
+	.icon-attitude {
+		background:url(../resource/attitude.png) no-repeat;
+	}
+
 </style>
 </head>
 <body>
-		<div class="content-bar">
-			<a href="" class="icon-box box-col">
-				<span class="box-icon-retweet">15</span>
-			</a>
-			<a href="" class="icon-box box-col">
-				<span class="box-icon-retweet">15</span>
-			</a>
-			<a href="" class="icon-box box-col">
-				<span class="box-icon-retweet">15</span>
-			</a>			
-		</div>	
+<div class="content-bar">
+	<a href="" class="icon-box">
+		<!-- 				<i class="box-icon-retweet"></i>
+                        <label class="retweet-count"></label> -->
+		<i class="icon icon-box icon-repost"></i>
+		<span class="repost-count"></span>
+	</a>
+	<a href="" class="icon-box">
+		<!-- 				<i class="box-icon-comment"></i>
+                        <label class="comment-count"></label> -->
+		<i class="icon icon-box icon-comment"></i>
+		<span class="comment-count"></span>
+	</a>
+	<a href="" class="icon-box">
+		<!-- 				<i class="box-icon-attitude"></i>
+                        <label class="attitude-count"></label> -->
+		<i class="icon icon-box icon-attitude"></i>
+		<span class="attitude-count"></span>
+	</a>
+</div>
 </body>
 </html>
