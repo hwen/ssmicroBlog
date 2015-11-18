@@ -9,6 +9,9 @@ $(document).ready(function(){
 			orgBox.querySelector('.source').innerHTML = item.source;
 			orgBox.querySelector('.default-content').innerHTML = item.text;
 			//orgBox.querySelector('.weibo-orignal').innerHTML = item.retweeted_status==null ? "":item.retweeted_status.text;
+			orgBox.querySelector('.repost-count').innerHTML = item.reposts_count;
+			orgBox.querySelector('.comment-count').innerHTML = item.comments_count;
+			orgBox.querySelector('.attitude-count').innerHTML = item.attitudes_count;
 			orgBox.style.display = '';
 			var sm = document.querySelector('.content-box-container').appendChild(orgBox);
 		});
