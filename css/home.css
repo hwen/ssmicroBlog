@@ -3,16 +3,22 @@ body {
 	background: #ccc;
 }
 
+p {
+	margin: .5rem 0;
+}
+
+/************contentbox header*************/
+
 .content-header {
-	padding:.68rem .68rem 0;
+	padding:.68rem 0 0 .25rem;
 	width: 100%;
-	height: 6rem;
+	height: 2.25rem;
 }
 
 .avatar {
-	height: 4.25rem;
-	width: 4.25rem;
-	border-radius: 2.125rem;
+	height: 2.25rem;
+	width: 2.25rem;
+	border-radius: 1.125rem;
 	margin: 10px 15px;
 	float: left;
 }
@@ -23,16 +29,68 @@ body {
 }
 
 .tweet-info {
+	margin-top: -2px;
 	white-space: nowrap;
 }
 
-.content {
-	
+/************content*************/
+
+.weibo-detail {
+
+	background:white;
 }
+
+.default-content, .extend-content {
+	word-wrap: break-word;
+	padding: 0 .6rem;
+}
+
+.default-content {
+	margin-top: 1.5rem;
+}
+
+.extend-content {
+	background: #F7F7F7;
+}
+
+/************control footer*************/
+.content-bar {
+	border-top: 1px solid #dadada;
+	height: 1.8rem;
+	text-align: center;
+}
+
+.content-bar a {
+	text-decoration: none;
+	color: #929292;
+}
+
+.content-bar em {
+	font-style: normal;
+	line-height: 1.8rem;
+}
+
+.content-bar i {
+	width: 1.5rem;
+	height: 1.2rem;	
+}
+
+.box-icon-retweet {
+	background: url(../resource/retweet.png) no-repeat;	
+	background-size: 1.5rem 1.2rem;
+	float: left;
+	margin: .4rem .4rem;
+}
+
+.box-icon-retweet:before {
+	content: "";
+}
+
 
 .content-box {
 	background: white;
 	min-height: 40px;
+	margin-top: .5rem;
 	width: 100%;
 }
 
