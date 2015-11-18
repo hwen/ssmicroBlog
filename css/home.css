@@ -36,13 +36,12 @@ p {
 /************content*************/
 
 .weibo-detail {
-
 	background:white;
 }
 
 .default-content, .extend-content {
 	word-wrap: break-word;
-	padding: 0 .6rem;
+	padding: 0 .8rem 0 .8rem;
 }
 
 .default-content {
@@ -105,6 +104,10 @@ p {
 
 .light-gray {
 	color: #929292;
+}
+
+a {
+	text-decoration: none;
 }
 
 /* rem 定位*/
