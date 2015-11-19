@@ -23,7 +23,7 @@ $(document).ready(function(){
 	};
 
 	var getPost = function(){
-		var api = "https://api.weibo.com/2/statuses/friends_timeline.json?access_token=2.00lYYxNEGUv6HEbba92b7e5cWAw5sD&count=2";
+		var api = "https://api.weibo.com/2/statuses/friends_timeline.json?access_token=2.00lYYxNEGUv6HEbba92b7e5cWAw5sD&count=4";
 		$.ajax({
 			url:api,
 			type:"get",
@@ -34,6 +34,10 @@ $(document).ready(function(){
 				showPost(data);
 			}
 		});
+	};
+
+	var getPostTime = function(postTime){
+
 	};
 
 	getPost();

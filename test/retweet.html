@@ -4,35 +4,72 @@
 	<meta charset="UTF-8">
 	<title>Document</title>
 <style>
-	body {
-		background:white;
+	.content-bar {
+		border-top: 1px solid #dadada;
+		display: flex;
+		display:-webkit-flex;
+		-webkit-align-items: center;
+		align-items: center;
+		-webkit-justify-content: center;
+		justify-content: center;
+		vertical-align: middle;
 	}
 
-	a {
-		text-decoration:none;
+	.content-bar a {
+		display: block;
+		text-decoration: none;
+		color: #929292;
+		height: 2rem;
 	}
 
-	em {
-		font-style:normal;
+	.content-bar i{
+		font-style: normal;
+		font-size:.9rem;
+	}
+
+	.icon-box {
+		flex:1;
+		-webkit-flex: 1;
+		width: 100%;
 	}
 
 	.icon {
-		background-size:10rem 8rem;
-		height:10rem;width:8rem;
+		height:2.6rem;width:4rem;
 		padding-left:1.25rem;
-		margin-left: 1rem;
+		line-height: 2rem;
 	}
 
 	.icon-repost {
 		background:url(../resource/retweet.png) no-repeat;
+		background-size:1rem .8rem;
+		margin-left: 2.5rem;
+
 	}
 
 	.icon-comment {
 		background:url(../resource/comment.png) no-repeat;
+		background-size:1rem .8rem;
+		margin-left: 3.5rem;
 	}
 
 	.icon-attitude {
 		background:url(../resource/attitude.png) no-repeat;
+		background-size:1rem .8rem;
+		margin-left: 3rem;
+	}
+
+
+	.line {
+		border-right:2px solid #dadada;
+		height: 1.5rem;
+	}
+
+
+	.content-box {
+		background: white;
+		min-height: 40px;
+		margin-top: .5rem;
+		width: 100%;
 	}
 
 </style>
@@ -40,23 +77,26 @@
 <body>
 <div class="content-bar">
 	<a href="" class="icon-box">
-		<!-- 				<i class="box-icon-retweet"></i>
-                        <label class="retweet-count"></label> -->
-		<i class="icon icon-box icon-repost"></i>
-		<span class="repost-count"></span>
+		<i class="icon icon-repost repost-count"></i>
 	</a>
+	<i class="line"></i>
 	<a href="" class="icon-box">
-		<!-- 				<i class="box-icon-comment"></i>
-                        <label class="comment-count"></label> -->
-		<i class="icon icon-box icon-comment"></i>
-		<span class="comment-count"></span>
+		<i class="icon icon-comment comment-count"></i>
 	</a>
+	<i class="line"></i>
 	<a href="" class="icon-box">
-		<!-- 				<i class="box-icon-attitude"></i>
-                        <label class="attitude-count"></label> -->
-		<i class="icon icon-box icon-attitude"></i>
-		<span class="attitude-count"></span>
+		<i class="icon icon-attitude attitude-count"></i>
 	</a>
 </div>
 </body>
+<script>
+//created_time Thu Nov 19 08:07:44 +0800 2015
+	var tt = new Date().toDateString(); //Thu Nov 19 2015
+	var t2 = new Date().toLocaleTimeString('en-GB'); //08:12:49
+	console.log(tt);
+	console.log(t2);
+	var getPostTime = function(){
+		
+	};
+</script>
 </html>
