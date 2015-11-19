@@ -1,0 +1,38 @@
+
+.nav-bar {
+	width: 100%;
+	background-color: white;
+	display: fixed;
+	top: 0;
+	height: 50px;
+}
+
+.nav-row {
+	display: flex;
+}
+
+.nav-bar .icon {
+	display: inline-block;
+}
+
+.follow-more {
+	
+}
+
+.nav-bar .user-name {
+	
+}
+
+.nav-bar .user-name::after {
+	background: url(../resource/down-arrow-red.png);
+	background-size: 30px 30px;
+	width: 30px; height: 30px;
+	content: " ";
+}
+
+.tools {
+
+}
+
+
+

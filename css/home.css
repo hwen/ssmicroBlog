@@ -83,7 +83,7 @@ p {
 	padding:0;
 }
 
-.default-pic-list ul:after {
+.default-pic-list ul::after {
 	content: ' ';
 	display: block;
 	clear:both;
