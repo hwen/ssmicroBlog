@@ -8,9 +8,6 @@ p {
 }
 
 /************contentbox*************/
-.content-box a:link,a:visited{
-	color:#929292;
-}
 
 .content-box {
 	background: white;
@@ -20,6 +17,9 @@ p {
 }
 
 /************contentbox header*************/
+.content-header a:link, a:visited {
+	color:#929292;
+}
 
 .content-header {
 	padding:.68rem 0 0 .25rem;
@@ -40,8 +40,12 @@ p {
 }
 
 .tweet-info {
-	margin-top: -2px;
+	margin-top: 2px;
 	white-space: nowrap;
+}
+
+.source {
+	margin-left: 4px;
 }
 
 /************content*************/
@@ -50,13 +54,48 @@ p {
 	background:white;
 }
 
+.default-pic-list {
+	padding:0 0 0 1.2rem;
+}
+
 .default-content, .extend-content {
 	word-wrap: break-word;
-	padding: 0 .8rem 0 .8rem;
+	padding: 0 .8rem 0 1rem;
+	font-size:1rem;
+}
+
+.default-pic-list ul {
+	display: flex;
+	flex-wrap: wrap;
+	list-style: none;
+	padding:0;
+}
+
+.default-pic-list ul:after {
+	content: ' ';
+	display: block;
+	clear:both;
+}
+
+.default-pic-list li{
+	display: list-item;
+	margin: 0 .2rem;
+	overflow: hidden;
+	float:left;
+}
+
+.weibo-detail li img {
+	height: 4.75rem;
+	width: 4.75rem;
+}
+
+.weibo-detail img {
+	width: 12rem;
+	height: 8.52rem;
 }
 
 .default-content {
-	margin-top: 1.5rem;
+	margin-top: 2rem;
 }
 
 .extend-content {

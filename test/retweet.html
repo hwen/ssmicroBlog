@@ -103,7 +103,7 @@
 			Jan:1,Feb:2,Mar:3,Apr:4,May:5,Jun:6,July:7,Aug:8,Sep:9,Oct:10,Nov:11,Dec:12
 		};
 		postTime = postTime.split(" ");
-		console.log(postTime);
+		console.log((postTime[3]).substring(0,5));
 		if(nowDay[1]===postTime[1]&&nowDay[3]===postTime[5]){
 			if((nowDay[2] - postTime[2])===0){
 				var hour = (postTime[3]).split(":");
