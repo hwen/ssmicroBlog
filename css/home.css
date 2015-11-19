@@ -102,7 +102,7 @@ p {
 	background: #F7F7F7;
 }
 
-/************control footer*************/
+/************content footer*************/
 .content-bar {
 	border-top: 1px solid #dadada;
 	display: flex;
@@ -132,7 +132,7 @@ p {
 	width: 100%;
 }
 
-.icon {
+.content-bar .icon {
 	height:2.6rem;width:4rem;
 	padding-left:1.25rem;
 	line-height: 2rem;
