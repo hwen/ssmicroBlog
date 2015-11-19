@@ -7,6 +7,11 @@ p {
 	margin: .5rem 0;
 }
 
+.block-space {
+	background-color: #ccc;
+	height: 2.3rem;
+}
+
 /************contentbox*************/
 
 .content-box {
@@ -47,7 +52,7 @@ p {
 	float: left;
 }
 
-.user-name {
+.content-header .user-name {
 	padding-top: 16px;
 }
 

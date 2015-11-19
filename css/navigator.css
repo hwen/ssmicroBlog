@@ -2,13 +2,16 @@
 .nav-bar {
 	width: 100%;
 	background-color: white;
-	display: fixed;
+	position:fixed;
 	top: 0;
-	height: 50px;
+	height: 2.3rem;
+	border-bottom:1px solid #dadada;
+	z-index: 100;
 }
 
 .nav-row {
-	display: flex;
+	text-align: center;
+	line-height: 2.3rem;
 }
 
 .nav-bar .icon {
@@ -16,22 +19,36 @@
 }
 
 .follow-more {
-	
+	float:left;
+	text-align: left;
+	margin-left: 1rem;
 }
 
 .nav-bar .user-name {
-	
+	font-size: 1.38rem;
+	position: relative;
 }
 
 .nav-bar .user-name::after {
-	background: url(../resource/down-arrow-red.png);
-	background-size: 30px 30px;
-	width: 30px; height: 30px;
-	content: " ";
+	background: url('../resource/down-arrow-red.png') no-repeat;
+	background-size: 1.1rem .60rem;
+	width: 1.1rem; height: .60rem;
+	content: ' ';
+	position: absolute;
+	margin-top: 1rem;
+	margin-left: .2rem;
 }
 
 .tools {
+	float:right;
+	text-align: right;
+	margin-right: 1rem;
+}
 
+.nav-row img {
+	width: 1.63rem;
+	height: 1.5rem;
+	margin-top: .3rem;
 }
 
 
