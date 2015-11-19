@@ -91,12 +91,39 @@
 </body>
 <script>
 //created_time Thu Nov 19 08:07:44 +0800 2015
-	var tt = new Date().toDateString(); //Thu Nov 19 2015
-	var t2 = new Date().toLocaleTimeString('en-GB'); //08:12:49
-	console.log(tt);
-	console.log(t2);
-	var getPostTime = function(){
-		
+	var postTime = "Thu Nov 19 08:07:44 +0800 2015";
+	// var tt = new Date().toDateString(); //Thu Nov 19 2015
+	// var t2 = new Date().toLocaleTimeString('en-GB'); //08:12:49
+	// console.log(tt);
+	// console.log(t2);
+	var getPostTime = function(postTime){
+		var nowDay = new Date().toDateString().split(" ");
+		var nowTime = new Date().toLocaleTimeString('en-GB').split(":");
+		var month = {
+			Jan:1,Feb:2,Mar:3,Apr:4,May:5,Jun:6,July:7,Aug:8,Sep:9,Oct:10,Nov:11,Dec:12
+		};
+		postTime = postTime.split(" ");
+		console.log(postTime);
+		if(nowDay[1]===postTime[1]&&nowDay[3]===postTime[5]){
+			if((nowDay[2] - postTime[2])===0){
+				var hour = (postTime[3]).split(":");
+				console.log((nowTime[0]-hour[0]) + "小时前");
+				return (nowTime[0]-hour[0]) + "小时前";
+			} else if ((nowDay[2] - postTime[2])===1){
+				console.log("昨天");
+				return "昨天";
+			} else {
+				console.log(month[postTime[1]]+"-"+postTime[2]);
+				return month[postTime[1]]+"-"+postTime[2];
+			}
+		} else if (nowDay[1]!==postTime[1]&&nowDay[3]===postTime[5]) {
+			console.log(month[postTime[1]]+"-"+postTime[2]);
+			return month[postTime[1]]+"-"+postTime[2];			
+		} else {
+			console.log("去年");
+			return "去年";
+		}
 	};
+	getPostTime(postTime);
 </script>
 </html>

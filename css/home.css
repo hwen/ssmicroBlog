@@ -7,6 +7,18 @@ p {
 	margin: .5rem 0;
 }
 
+/************contentbox*************/
+.content-box a:link,a:visited{
+	color:#929292;
+}
+
+.content-box {
+	background: white;
+	min-height: 40px;
+	margin-top: .5rem;
+	width: 100%;
+}
+
 /************contentbox header*************/
 
 .content-header {
@@ -110,14 +122,6 @@ p {
 .line {
 	border-right:2px solid #dadada;
 	height: 1.5rem;
-}
-
-
-.content-box {
-	background: white;
-	min-height: 40px;
-	margin-top: .5rem;
-	width: 100%;
 }
 
 /************control class*************/
