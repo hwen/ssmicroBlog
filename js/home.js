@@ -1,9 +1,9 @@
 $(document).ready(function(){
 
 	var getPost = function(){
-		var api = "https://api.weibo.com/2/statuses/friends_timeline.json?access_token=2.00lYYxNEGUv6HEbba92b7e5cWAw5sD";
+		var api = "https://api.weibo.com/2/statuses/friends_timeline.json?access_token=2.00lYYxNE0Vn6kU7ce36e3eb1rmhsuC";
 		$.ajax({
-			url:api,
+			url:'',
 			type:"get",
 			crossDomain:true,
 			dataType:"jsonp",
@@ -22,7 +22,7 @@ $(document).ready(function(){
 
 			var postTime = item.created_at;
 				postTime = getPostTime(postTime);
-
+			// document.querySelector('.nav-bar').querySelector('.user-name');
 			orgBox.querySelector('.created-time').innerHTML = postTime;
 			orgBox.querySelector('.avatar').setAttribute('src',item.user.avatar_hd);
 			orgBox.querySelector('.user-name').innerHTML=item.user.name;
@@ -56,23 +56,18 @@ $(document).ready(function(){
 		if(nowDay[1]===postTime[1]&&nowDay[3]===postTime[5]){
 			if((nowDay[2] - postTime[2])===0){
 				var hour = (postTime[3]).split(":");
-				// console.log((nowTime[0]-hour[0]) + "小时前");
 				if((nowTime[0]-hour[0])===0){
 					return (nowTime[1]-hour[1])>5? (nowTime[1]-hour[1])+"分钟前": "刚刚";
 				}
 				return (nowTime[0]-hour[0]) + "小时前";
 			} else if ((nowDay[2] - postTime[2])===1){
-				// console.log("昨天");
 				return "昨天 "+ (postTime[3].substring(0,5)+" ");
 			} else {
-				// console.log(month[postTime[1]]+"-"+postTime[2]);
 				return month[postTime[1]]+"-"+postTime[2];
 			}
 		} else if (nowDay[1]!==postTime[1]&&nowDay[3]===postTime[5]) {
-			// console.log(month[postTime[1]]+"-"+postTime[2]);
 			return month[postTime[1]]+"-"+postTime[2];			
 		} else {
-			// console.log("去年");
 			return "去年";
 		}
 	};
@@ -92,14 +87,13 @@ $(document).ready(function(){
 
 		return node;
 		} else if (picList.length===1) {
-			// console.log("单："+(picList[0]).thumbnail_pic);
 			var img = document.createElement('img');
 			img.setAttribute('src',(picList[0]).thumbnail_pic);
 			return img;
 		} else {
 			return false;
 		}
-	};	
+	};
 
 	getPost();
 });

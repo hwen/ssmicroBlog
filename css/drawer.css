@@ -12,9 +12,13 @@
 	z-index: 10;
 }
 
+#slider {
+	z-index: 10;
+}
+
 .draw-setting {
 	position: fixed;
-	left: 0;
+	left: -19rem;
 	top:0;
 	bottom: 0;
 	box-shadow: 15px 15px 4px 0 rgba(0,0,0,0.2);
@@ -81,3 +85,11 @@
 	float: right;
 }
 
+/*slide动画*/
+@keyframes slideRight {
+	100% { left: 0; }
+}
+
+@-webkit-keyframes slideRight {
+	100% { left: 0; }
+}
