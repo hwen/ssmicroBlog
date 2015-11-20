@@ -1,0 +1,83 @@
+
+.draw-setting a {
+	text-decoration: none;
+	color: black;
+}
+
+.draw-setting div {
+	text-shadow: none;
+}
+
+.drawer {
+	z-index: 10;
+}
+
+.draw-setting {
+	position: fixed;
+	left: 0;
+	top:0;
+	bottom: 0;
+	box-shadow: 15px 15px 4px 0 rgba(0,0,0,0.2);
+	width: 18rem;
+	background: #dadada;
+	z-index: 10;
+	font-size: 1.5rem;
+}
+
+.draw-header {
+	height: 3.13rem;
+	line-height: 3.13rem;
+	font-size: 1.7rem;
+	background:white;
+	box-shadow: 3px 3px 2px 0 rgba(0,0,0,0.2);	
+	position: relative;
+}
+
+.draw-content div {
+	background-color: white;
+}
+
+.draw-text {
+	height: 3rem;
+	line-height: 3rem;
+	border-top: 1px solid #dadada; 	
+	padding-left: 8px;
+	position: relative;
+}
+
+.draw-text::after {
+	position: absolute;
+	content: ' ';
+	background: url(../resource/arrow-right.png) right no-repeat;
+	background-size: .7rem 1.4rem;
+	width: .7rem;
+	height: 1.3rem;
+	right: 0;
+	margin: .8rem .4rem;
+}
+
+.draw-content .set {
+	margin:1.35rem 0;
+	box-shadow: 3px 3px 2px 0 rgba(0,0,0,0.2);	
+}
+
+.logout {
+	text-align: center;
+	color: #D5755D;
+}
+
+.draw-header p {
+	margin-left: 7.5rem;
+}
+
+.back-icon {
+	height: 1.35rem;
+	width: 1.8rem;
+	float: left;
+	padding: .8rem 0 0 .4rem;
+}
+
+.forword-icon {
+	float: right;
+}
+

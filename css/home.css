@@ -184,7 +184,11 @@ p {
 	height: 1.5rem;
 }
 
-/************control class*************/
+/************control*************/
+body {
+	font-family:Tahoma,Arial,Roboto,"Droid Sans","Helvetica Neue","Droid Sans Fallback","Heiti SC",sans-self;
+}
+
 .txt-xxs {
 	font-size:.625rem;
 }

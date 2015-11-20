@@ -6,7 +6,7 @@
 	top: 0;
 	height: 2.3rem;
 	border-bottom:1px solid #dadada;
-	z-index: 100;
+	z-index: 2;
 }
 
 .nav-row {
