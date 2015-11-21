@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="60dbc8f3-9420-4d16-aa7c-753e36e67e90" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/drawer.css" afterPath="$PROJECT_DIR$/css/drawer.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/drawer.js" afterPath="$PROJECT_DIR$/js/drawer.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/home.html" afterPath="$PROJECT_DIR$/views/home.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="ssmicroBlog.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -52,7 +49,7 @@
         <entry file="file://$PROJECT_DIR$/js/drawer.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.41129032">
-              <caret line="15" column="31" selection-start-line="15" selection-start-column="31" selection-end-line="15" selection-end-column="31" />
+              <caret line="15" column="29" selection-start-line="15" selection-start-column="29" selection-end-line="15" selection-end-column="29" />
               <folding />
             </state>
           </provider>
@@ -561,7 +558,7 @@
     <entry file="file://$PROJECT_DIR$/js/drawer.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.41129032">
-          <caret line="15" column="31" selection-start-line="15" selection-start-column="31" selection-end-line="15" selection-end-column="31" />
+          <caret line="15" column="29" selection-start-line="15" selection-start-column="29" selection-end-line="15" selection-end-column="29" />
           <folding />
         </state>
       </provider>

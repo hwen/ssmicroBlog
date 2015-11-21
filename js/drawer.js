@@ -13,7 +13,7 @@ $(document).ready(function(){
 		});
 	});
 
-	$('.content-box-containerjj').click(function () {
+	$('.content-box-container').click(function () {
 		var $slider = $('.draw-setting');
 		if(parseInt($slider.css('left'),10) > -1){
 			$slider.animate({
