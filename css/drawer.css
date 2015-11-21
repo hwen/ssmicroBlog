@@ -12,10 +12,6 @@
 	z-index: 10;
 }
 
-#slider {
-	z-index: 10;
-}
-
 .draw-setting {
 	position: fixed;
 	left: -19rem;
@@ -42,9 +38,9 @@
 }
 
 .draw-text {
-	height: 3rem;
-	line-height: 3rem;
-	border-top: 1px solid #dadada; 	
+	height: 2.5rem;
+	line-height: 2.5rem;
+	border-top: 1px solid #dadada;
 	padding-left: 8px;
 	position: relative;
 }
@@ -61,7 +57,7 @@
 }
 
 .draw-content .set {
-	margin:1.35rem 0;
+	margin:1.2rem 0;
 	box-shadow: 3px 3px 2px 0 rgba(0,0,0,0.2);	
 }
 
@@ -75,21 +71,9 @@
 }
 
 .back-icon {
-	height: 1.35rem;
+	height: 1.2rem;
 	width: 1.8rem;
 	float: left;
 	padding: .8rem 0 0 .4rem;
 }
 
-.forword-icon {
-	float: right;
-}
-
-/*slide动画*/
-@keyframes slideRight {
-	100% { left: 0; }
-}
-
-@-webkit-keyframes slideRight {
-	100% { left: 0; }
-}

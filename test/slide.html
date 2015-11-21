@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript" src="http://cdn.bootcss.com/jquery/2.1.4/jquery.js"></script>
+</head>
+<body>
+<div id="slidemarginleft" class="slide" style="width: 60%;float: left">
+    <button>
+        slide it
+    </button>
+    <div class="inner">
+        Slide from bottom
+    </div>
+</div>
+</body>
+<script>
+    $("#slidemarginleft button").click(function(){
+        var $marginlefty = $('.inner');
+        $marginlefty.animate({
+            marginLeft:parseInt($marginlefty.css('marginLeft'),10)==0 ? $marginlefty.outerWidth() : 0
+        });
+    });
+</script>
+</html>

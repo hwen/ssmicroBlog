@@ -1,11 +1,24 @@
 $(document).ready(function(){
-	var settings = document.querySelector('.follow-more');
-	var slider = document.getElementById('slider');
+	$('.follow-more').click(function(){
+		var $slider = $('.draw-setting');
+		$slider.animate({
+			left:0
+		});
+	});
 
-	EventUtil.addHandler(settings, 'click', function(){
-		var isOpen = slider.classList.contains('sldieIn');
-		var slideState = isOpen ? 'slideOut' : 'slideIn'; 
+	$('.draw-header','.drawer').click(function(){
+		var $slider = $('.draw-setting');
+		$slider.animate({
+			left:-285
+		});
+	});
 
-		slider.className = slideState;
+	$('.content-box-containerjj').click(function () {
+		var $slider = $('.draw-setting');
+		if(parseInt($slider.css('left'),10) > -1){
+			$slider.animate({
+				left:-285
+			});
+		}
 	});
 });
