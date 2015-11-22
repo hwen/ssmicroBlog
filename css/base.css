@@ -1,0 +1,95 @@
+
+/************control*************/
+body {
+	font-family:Tahoma,Arial,Roboto,"Droid Sans","Helvetica Neue","Droid Sans Fallback","Heiti SC",sans-self;
+}
+
+.txt-xxs {
+	font-size:.625rem;
+}
+
+.size-md {	
+	font-size: 2rem;
+}
+
+.light-gray {
+	color: #929292;
+}
+
+a {
+	text-decoration: none;
+}
+
+/* rem 定位*/
+@media screen and (min-width:1200px) {
+  html {font-size: 50px;}
+  
+}
+
+@media screen and (max-width:1500px) {
+  html {font-size: 48px;}
+}
+
+@media screen and (max-width:1100px) {
+  html {font-size: 46px;}
+}
+
+@media screen and (max-width:1000px) {
+  html {font-size: 40px;}
+}
+
+@media screen and (max-width:900px) {
+  html {font-size: 36px;}
+}
+
+@media screen and (max-width:800px) {
+  html {font-size: 29px;}
+}
+
+@media screen and (max-width:700px) {
+  html {font-size: 28px;}
+}
+
+@media screen and (max-width:640px) {
+  html {font-size: 27px;}
+}
+
+@media screen and (max-width:617px) {
+  html {font-size: 26px;}
+}
+
+@media screen and (max-width:594px) {
+  html {font-size: 25px;}
+}
+
+@media screen and (max-width:571px) {
+  html {font-size: 24px;}
+}
+
+@media screen and (max-width:548px) {
+  html {font-size: 23px;}
+}
+
+@media screen and (max-width:525px) {
+  html {font-size: 22px;}
+}
+
+@media screen and (max-width:502px) {
+  html {font-size: 20px;}
+}
+
+@media screen and (max-width:480px) {
+  html {font-size: 18px;}
+}
+
+@media screen and (max-width:457px) {
+  html {font-size: 16px;}
+}
+
+@media screen and (max-width:434px) {
+  html {font-size: 15px;}
+}
+
+@media screen and (max-width:411px) {
+  html {font-size: 15px;}
+}

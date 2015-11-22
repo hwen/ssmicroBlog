@@ -103,7 +103,10 @@ $(document).ready(function(){
 		} else if (picList.length===1) {
 			var img = document.createElement('img');
 			img.setAttribute('src', item.original_pic);
-			return img;
+			var linkImg = document.createElement('a');
+			linkImg.setAttribute('href', item.original_pic);
+			linkImg.appendChild(img);
+			return linkImg;
 		} else {
 			return false;
 		}
