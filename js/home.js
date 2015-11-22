@@ -2,6 +2,7 @@ $(document).ready(function(){
 	var countPage = 1;
 
 	var getPost = function(countPage){
+		countPage = countPage || 1;
 		var api = "https://api.weibo.com/2/statuses/friends_timeline.json?access_token=2.00lYYxNEGUv6HEbba92b7e5cWAw5sD";
 		api += "&page="+countPage;
 		$.ajax({
@@ -16,6 +17,7 @@ $(document).ready(function(){
 		});
 	};
 
+	//show post in page
 	var showPost = function(post){
 		
 		var contentBox = document.querySelector('.content-box');
@@ -25,6 +27,7 @@ $(document).ready(function(){
 			var postTime = item.created_at;
 				postTime = getPostTime(postTime);
 			// document.querySelector('.nav-bar').querySelector('.user-name');
+			orgBox.setAttribute('data-id',item.idstr);
 			orgBox.querySelector('.created-time').innerHTML = postTime;
 			orgBox.querySelector('.avatar').setAttribute('src',item.user.avatar_hd);
 			orgBox.querySelector('.user-name').innerHTML=item.user.name;
@@ -34,13 +37,17 @@ $(document).ready(function(){
 			orgBox.querySelector('.comment-count').innerHTML = item.comments_count||"评论";
 			orgBox.querySelector('.attitude-count').innerHTML = item.attitudes_count||"赞";
 
-			var picList = getPic(item);
+			var picList = getPic(item.pic_urls);
 			if(picList){
 				orgBox.querySelector('.default-pic-list').appendChild(picList);
 			}
 
 			if(item.retweeted_status){
-				// orgBox.querySelector("*");
+				orgBox.querySelector('.weibo-original').innerHTML = item.retweeted_status.text;
+				picList = getPic(item.retweeted_status.pic_urls);
+				if(picList){
+					orgBox.querySelector('.media-pic-list').appendChild(picList);
+				}
 			}
 
 			orgBox.style.display = '';
@@ -48,6 +55,7 @@ $(document).ready(function(){
 		});
 	};
 
+	//get posted time
 	var getPostTime = function(postTime){
 		var nowDay = new Date().toDateString().split(" ");  //Thu Nov 19 2015
 		var nowTime = new Date().toLocaleTimeString('en-GB').split(":"); //08:12:49
@@ -75,7 +83,7 @@ $(document).ready(function(){
 	};
 
 	var getPic = function(item){
-		var picList = item.pic_urls;
+		var picList = item;
 		if(picList.length > 1){
 			var node = document.createElement('ul');
 			picList = picList.forEach(function(item){
@@ -105,6 +113,7 @@ $(document).ready(function(){
 		},2000);
 	};
 
+	//load more posts when scroll to the bottom
 	window.onscroll=function(){
 		var sHeight=document.documentElement.scrollTop||document.body.scrollTop;//滚动高度
 		var wHeight=document.documentElement.clientHeight;//window
@@ -115,5 +124,116 @@ $(document).ready(function(){
 		}
 	};
 
+	
+
+
+	//到页面底部加载更多
+	function slideDownStep1(dist){
+		var sd1 = document.getElementById('sd1'),
+			sd2 = document.getElementById('sd2');
+
+		var img = document.getElementById('reflesh-icon');
+		var info = document.getElementById('reflesh-info');
+		img.setAttribute('src', '../resource/down.png');
+		info.innerHTML = '下拉刷新';
+		sd2.style.display = "none";
+		sd1.style.display = "block";
+		sd1.style.height = 1 - parseInt(dist) + "px";
+	}
+
+	function slideDownStep2() {
+		var sd1 = document.getElementById("sd1"),
+			sd2 = document.getElementById("sd2");
+		sd1.style.display = "none";
+		sd1.style.height = "20px";
+		sd2.style.display = "block";
+	}
+
+	function slideDownStep3(){
+		var sd1 = document.getElementById('sd1'),
+			sd2 = document.getElementById('sd2');
+		sd1.style.display = "none";
+		sd2.style.display = "none";
+	}
+
+	function kt_touch(contentId, way){
+		var _start = 0,
+			_end = 0,
+			_content = document.getElementById(contentId);
+		_content.addEventListener("touchstart",touchStart,false);
+		_content.addEventListener("touchmove",touchMove,false);
+		_content.addEventListener("touchend",touchEnd,false);
+
+		function touchStart(event){
+			event.preventDefault();
+			if (!event.touches.length) { return; }
+			var touch = event.touches[0];
+			if (way == "x") {
+				_start = touch.pageX;
+			} else {
+				_start = touch.pageY;
+			}
+		}
+
+		function touchMove(event){
+			event.preventDefault();
+			if (!event.touches.length) { return; }
+
+			var touch = event.touches[0];
+
+			if (way === "x") {
+				_end = (_start - touch.pageX);
+			} else {
+				_end = (_start - touch.pageY);
+				if (_end < -10) {
+					slideDownStep1(_end);
+				}
+				if(_end < -80 ){
+					var img = document.getElementById('reflesh-icon');
+					var info = document.getElementById('reflesh-info');
+					img.setAttribute('src', '../resource/up.png');
+					info.innerHTML = '释放更新';
+				}
+				if(_end >= -10){
+					slideDownStep3();
+				}
+			}
+
+		}
+
+		function touchEnd(event){
+			if (_end <0) {
+				slideDownStep2();
+				var oldPost = document.querySelector('.content-box-container');
+				oldPost = oldPost.children[1].getAttribute('data-id');
+				var api = 'https://api.weibo.com/2/statuses/friends_timeline/ids.json?access_token=2.00lYYxNEGUv6HEbba92b7e5cWAw5sD';
+				$.ajax({
+					url:api,
+					type:"get",
+					crossDomain:true,
+					dataType:"jsonp",
+					success:function(data){
+						var data = data.data.statuses;
+						if(oldPost===data[0]){
+							console.log('没有更新');
+						} else {
+							var contentBox = document.querySelector('.content-box');
+							var orgBox = contentBox.cloneNode(true);
+							var container = document.querySelector('.content-box-container');
+							container.innerHTML = '';
+							container.appendChild(orgBox);
+							getPost(1);
+						}
+					}
+				});
+				setTimeout(function(){
+					slideDownStep3();
+				},1000);
+			}
+		}
+	}
+	//到页面底部加载更多 end
+
+	kt_touch("content-box-container",'y');
 	getPost(1);
 });

@@ -22,9 +22,20 @@
 </div>
 <div class="block-space"></div>
 
+<div class="reflesh">
+	<div id="sd1" style="display: none;">
+		<div class="reflesh-box">
+			<img id="reflesh-icon" src="../resource/down.png" alt=""/><label id="reflesh-info" for="">下拉刷新</label>
+		</div>
+	</div>
+	<div id="sd2" style="display: none;">
+		<img src="../resource/loading.gif" alt=""/><label for="">加载中</label>
+	</div>
+</div>
+
 <!-- content-box -->
-<div class="content-box-container">
-	<div class="content-box" style="display:none;">
+<div id="content-box-container" class="content-box-container">
+	<div class="content-box" style="display:none;" data-id="">
 		<div class="content-header">
 			<i class="item-avatar"><img class="avatar" src="" alt="头像"></i>
 			<div class="user-name"></div>

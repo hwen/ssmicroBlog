@@ -12,9 +12,13 @@
 	
 </head>
 <body>
-<div id="sd">
+<button id="cc">jj</button>
+<div id="sd" data-id="">
 	<div id="sd1">
-		<p style="font-size:3rem;">松开后刷新</p>
+		<p style="font-size: 50px;">松开后刷新最新回复</p>
+	</div>
+	<div id="sd2">
+		<p><img src="../resource/loading.gif" alt="玩命加载中.."/></p>
 	</div>
 </div>
 <div>
@@ -46,11 +50,13 @@
 	</p>
 </div>
 
-<div id="sd2">
-	<p style="font-size:3rem;color:blue;">加载中...</p>
-</div>
-
 <script type="text/javascript">
+	var jj = document.getElementById('cc');
+	jj.addEventListener('click',function(){
+		var sd = document.getElementById('sd');
+		sd.setAttribute('data-id','520');
+	});
+
 	function slideDownStep1(dist){
 		var sd1 = document.getElementById('sd1'),
 			sd2 = document.getElementById('sd2');
@@ -59,9 +65,9 @@
 		sd1.style.height = 1 - parseInt(dist) + "px";
 	}
 
-	function slideDownStep2(){
-		var sd1 = document.getElementById('sd1'),
-			sd2 = document.getElementById('sd2');
+	function slideDownStep2() {
+		var sd1 = document.getElementById("sd1"),
+				sd2 = document.getElementById("sd2");
 		sd1.style.display = "none";
 		sd1.style.height = "20px";
 		sd2.style.display = "block";
@@ -106,24 +112,21 @@
 				if (_end < 0) {
 					slideDownStep1(_end);
 				}
+				if(_end < -200 ){
+				}
+				if(_end === 0){
+					slideDownStep3();
+				}
 			}
 			
 		}
 
 		function touchEnd(event){
-			if (_end > 0) {
-				//slideLeft or slideUp
+			if (_end <0) {
 				slideDownStep2();
 				slideDownStep3();
-				//getReplyList(++curPage);
-			} else {
-				//slideRight or slideDown
-				slideDownStep2();
-				slideDownStep3();
-				//getReplyList();
 			}
 		}
-
 	}
 
 	kt_touch("touch",'y');
