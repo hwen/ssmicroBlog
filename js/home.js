@@ -1,9 +1,11 @@
 $(document).ready(function(){
+	var countPage = 1;
 
-	var getPost = function(){
-		var api = "https://api.weibo.com/2/statuses/friends_timeline.json?access_token=2.00lYYxNE0Vn6kU7ce36e3eb1rmhsuC";
+	var getPost = function(countPage){
+		var api = "https://api.weibo.com/2/statuses/friends_timeline.json?access_token=2.00lYYxNEGUv6HEbba92b7e5cWAw5sD";
+		api += "&page="+countPage;
 		$.ajax({
-			url:'',
+			url:api,
 			type:"get",
 			crossDomain:true,
 			dataType:"jsonp",
@@ -95,5 +97,23 @@ $(document).ready(function(){
 		}
 	};
 
-	getPost();
+	var showLoading = function(){
+		document.querySelector('.loading').style.display = '';
+		setTimeout(function(){
+			document.querySelector('.loading').style.display = 'none';
+			getPost(++countPage);
+		},2000);
+	};
+
+	window.onscroll=function(){
+		var sHeight=document.documentElement.scrollTop||document.body.scrollTop;//滚动高度
+		var wHeight=document.documentElement.clientHeight;//window
+		var dHeight=document.documentElement.offsetHeight;//整个文档高度
+		if(dHeight-(sHeight+wHeight)<100)
+		{
+			showLoading();
+		}
+	};
+
+	getPost(1);
 });
