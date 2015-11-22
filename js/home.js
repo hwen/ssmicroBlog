@@ -37,7 +37,7 @@ $(document).ready(function(){
 			orgBox.querySelector('.comment-count').innerHTML = item.comments_count||"评论";
 			orgBox.querySelector('.attitude-count').innerHTML = item.attitudes_count||"赞";
 
-			var picList = getPic(item.pic_urls);
+			var picList = getPic(item, false);
 			if(picList){
 				orgBox.querySelector('.default-pic-list').appendChild(picList);
 			}
@@ -46,7 +46,7 @@ $(document).ready(function(){
 				var orgPost = item.retweeted_status;
 				orgBox.querySelector('.weibo-original').innerHTML = "<a href=''>@"+ orgPost.user.name + "<\a>" +
 					getPostText(orgPost.text);
-				picList = getPic(item.retweeted_status.pic_urls);
+				picList = getPic(item, true);
 				if(picList){
 					orgBox.querySelector('.media-pic-list').appendChild(picList);
 				}
@@ -84,8 +84,10 @@ $(document).ready(function(){
 		}
 	};
 
-	var getPic = function(item){
-		var picList = item;
+	var getPic = function(item, isRepost){
+
+		var item = isRepost ? item.retweeted_status : item;
+		var picList = item.pic_urls;
 		if(picList.length > 1){
 			var node = document.createElement('ul');
 			picList = picList.forEach(function(item){
@@ -100,7 +102,7 @@ $(document).ready(function(){
 		return node;
 		} else if (picList.length===1) {
 			var img = document.createElement('img');
-			img.setAttribute('src',(picList[0]).thumbnail_pic);
+			img.setAttribute('src', item.original_pic);
 			return img;
 		} else {
 			return false;
