@@ -43,7 +43,9 @@ $(document).ready(function(){
 			}
 
 			if(item.retweeted_status){
-				orgBox.querySelector('.weibo-original').innerHTML = getPostText(item.retweeted_status.text);
+				var orgPost = item.retweeted_status;
+				orgBox.querySelector('.weibo-original').innerHTML = "<a href=''>@"+ orgPost.user.name + "<\a>" +
+					getPostText(orgPost.text);
 				picList = getPic(item.retweeted_status.pic_urls);
 				if(picList){
 					orgBox.querySelector('.media-pic-list').appendChild(picList);
@@ -138,7 +140,7 @@ $(document).ready(function(){
 		});
 
 		newText = newText.replace(atReg, function(match){
-			return "<a href=''>"+ match[0].substr(2) +"</a>";
+			return "<a href=''>"+ match.substr(2) +"</a>";
 		});
 		return newText;
 	};

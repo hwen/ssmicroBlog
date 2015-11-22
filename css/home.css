@@ -53,7 +53,7 @@ p {
 	margin-left: 1rem;
 }
 
-.content-header a:link, a:visited {
+.content-header a:link,.content-header a:visited {
 	color:#929292;
 }
 
@@ -115,6 +115,10 @@ p {
 	word-wrap: break-word;
 	padding: 0 .8rem 0 1rem;
 	font-size:1rem;
+}
+
+.default-content a:visited, .extend-content a:visited {
+	color: dodgerblue;
 }
 
 .default-pic-list ul, .media-pic-list ul {
