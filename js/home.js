@@ -32,7 +32,7 @@ $(document).ready(function(){
 			orgBox.querySelector('.avatar').setAttribute('src',item.user.avatar_hd);
 			orgBox.querySelector('.user-name').innerHTML=item.user.name;
 			orgBox.querySelector('.source').innerHTML = " 来自 "+item.source;
-			orgBox.querySelector('.default-content').innerHTML = item.text;
+			orgBox.querySelector('.default-content').innerHTML = getPostText(item.text);
 			orgBox.querySelector('.repost-count').innerHTML = item.reposts_count||"转发";
 			orgBox.querySelector('.comment-count').innerHTML = item.comments_count||"评论";
 			orgBox.querySelector('.attitude-count').innerHTML = item.attitudes_count||"赞";
@@ -43,7 +43,7 @@ $(document).ready(function(){
 			}
 
 			if(item.retweeted_status){
-				orgBox.querySelector('.weibo-original').innerHTML = item.retweeted_status.text;
+				orgBox.querySelector('.weibo-original').innerHTML = getPostText(item.retweeted_status.text);
 				picList = getPic(item.retweeted_status.pic_urls);
 				if(picList){
 					orgBox.querySelector('.media-pic-list').appendChild(picList);
@@ -124,8 +124,24 @@ $(document).ready(function(){
 		}
 	};
 
-	
+	var getPostText = function(text){
+		var newText = text;
+		var emotionReg = /\[[^\]]+]/g;
+		var atReg = /\/\/@\w+/g;
+		var linkReg =/((http|ftp|https):\/\/)?[\w\-_]+(\.[\w\-_]+)+([\w\-\.,@?^=%&amp;:/~\+#]*[\w\-\@?^=%&amp;/~\+#])?/g;
+		newText = newText.replace(linkReg, function(match){
+			return "<a href="+ match + ">" + match + "</a>";
+		});
 
+		newText = newText.replace(emotionReg, function(match){
+			return "<img class='emotion' src="+ emotions[match] +" />";
+		});
+
+		newText = newText.replace(atReg, function(match){
+			return "<a href=''>"+ match[0].substr(2) +"</a>";
+		});
+		return newText;
+	};
 
 	//到页面底部加载更多
 	function slideDownStep1(dist){

@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<img src="" alt=""/>
+<script src="../js/emotions.js"></script>
+<script>
+    var text = "[挖鼻]//@yolanda不知道改什么名字: 又看到两个俺们程序员都是有故事滴人[doge] http://t.cn/RU82caX";
+    var emotionReg = /\[[^\]]+]/g;
+    var atReg = /\/\/@\w+/g;
+    var linkReg =/((http|ftp|https):\/\/)?[\w\-_]+(\.[\w\-_]+)+([\w\-\.,@?^=%&amp;:/~\+#]*[\w\-\@?^=%&amp;/~\+#])?/g;
+    var matchEmotion =[];
+    var matchAt = [];
+    var matchLink = [];
+    var newText = text.replace(emotionReg,function(match,p1){
+        return "<a>"+match+"</a>";
+    });
+    var fj = atReg.exec(text);
+    fj = fj[0].substr(2);
+    console.log(fj);
+    while(true){
+        var result = emotionReg.exec(text);
+        if(result){
+            matchEmotion += result;
+        } else {
+            break;
+        }
+    }
+    while(true){
+        result = atReg.exec(text);
+        if(result){
+            matchAt += result;
+        } else {
+            break;
+        }
+    }
+
+</script>
+</body>
+</html>
