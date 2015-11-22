@@ -1,0 +1,142 @@
+
+/******** header bar *********/
+.header-box {
+	width: 100%;
+	background-color: white;
+	position:fixed;
+	top: 0;
+	height: 2.3rem;
+	line-height: 2.3rem;
+	border-bottom:1px solid #dadada;
+	z-index: 2;
+	text-align: center;
+	padding-left: .5rem;
+}
+
+.header-box label {
+	font-size: .8rem;
+	float: right;
+	padding-right: 1rem; 
+}
+
+/******** avatar bar *********/
+body {
+	background: #dadada;
+}
+
+.avatar-container {
+	height: 8rem;
+	background: white;
+	margin-top: 2.8rem;
+}
+
+.user-avatar {
+	height: 5rem;
+	border-bottom: 1px solid #dadada;
+	position: relative;
+	background: white;
+}
+
+.user-avatar::after {
+	content: ' ';
+	position: absolute;
+	background: url(../resource/arrow-right.png) right no-repeat;
+	background-size: .5rem 1rem;
+	width: .5rem;
+	height: 1rem;
+	right: 0;
+	margin-top: -.5rem;
+	margin-right: .5rem;
+}
+
+.user-avatar img {
+	height: 3rem;
+	width: 3rem;
+	border-radius: 1.5rem;
+	margin: 1rem .8rem 0 0;
+	padding-left: .4rem;
+	float: left;
+}
+
+.user-avatar .name {
+	display: block;
+	padding-top: 1.2rem;
+	margin-left: .5rem;
+	position: relative;
+}
+
+.user-avatar .name::after {
+	content: " ";
+	position: absolute;
+	background: url(../resource/forvip.png) no-repeat;
+	background-size: 2rem .8rem;
+	height: .8rem;
+	width: 2rem;
+	margin: .2rem .3rem;
+}
+
+.user-avatar .detail {
+	color: gray;
+	font-size: .7rem;
+}
+
+.user-info ul {
+	list-style: none;
+	margin-top: .5rem;
+}
+
+.user-info li {
+	display: inline-block;
+	width: 32%;
+	text-align: center;
+	position: relative;
+}
+
+.user-info .post::after, .user-info .following::after, .user-info .follower::after {
+	color: gray;
+	position: absolute;
+	bottom: -1rem;
+	right: 3rem;
+	font-size: .7rem;
+}
+
+.user-info .post::after {
+	content: "微博";
+}
+
+.user-info .following::after {
+	content: "关注";
+}
+
+.user-info .follower::after {
+	content: "粉丝";
+}
+
+/******** content box *********/
+.tab {
+	width: 100%;
+	height: 3rem;
+	line-height: 3rem;
+	background: white;
+	border-top: 1px solid #dadada;
+}
+
+.tab img {
+	height: 2rem;
+	width: 2rem;
+	margin: .5rem .5rem;
+	float: left;
+}
+
+.me1, .me2, .me3{
+	margin: .8rem 0;
+}
+
+.tab .more-detail {
+	font-size: .6rem;
+	color: gray;
+}
+
+.block-space-end {
+	height: 3.2rem;
+}

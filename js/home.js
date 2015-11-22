@@ -134,7 +134,7 @@ $(document).ready(function(){
 	var getPostText = function(text){
 		var newText = text;
 		var emotionReg = /\[[^\]]+]/g;
-		var atReg = /\/\/@\w+/g;
+		var atReg = /@\w+/g;
 		var linkReg =/((http|ftp|https):\/\/)?[\w\-_]+(\.[\w\-_]+)+([\w\-\.,@?^=%&amp;:/~\+#]*[\w\-\@?^=%&amp;/~\+#])?/g;
 		newText = newText.replace(linkReg, function(match){
 			return "<a href="+ match + ">" + match + "</a>";
@@ -145,7 +145,7 @@ $(document).ready(function(){
 		});
 
 		newText = newText.replace(atReg, function(match){
-			return "<a href=''>"+ match.substr(2) +"</a>";
+			return "<a href=''>"+ match +"</a>";
 		});
 		return newText;
 	};
