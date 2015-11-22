@@ -117,7 +117,7 @@ $(document).ready(function(){
 		setTimeout(function(){
 			document.querySelector('.loading').style.display = 'none';
 			getPost(++countPage);
-		},2000);
+		},1000);
 	};
 
 	//load more posts when scroll to the bottom

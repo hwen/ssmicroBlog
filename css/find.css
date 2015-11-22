@@ -1,0 +1,95 @@
+
+/********** header **********/
+body {
+	background: #dadada;
+}
+
+.header-box {
+	height: 2.5rem;
+	background: white;
+	position: relative;
+}
+
+.header-box input {
+	height: 1.3rem;
+	width: 80%;
+	border-radius: 20px;
+	border:1px solid gray;
+	line-height: 1.3rem;
+	margin: .5rem .5rem;
+	position: absolute;
+	background: url(../resource/search.png) left no-repeat;
+	background-position: .5rem;
+	background-color: #dadada;
+	color: gray;
+	padding-left: 1.8rem;
+	font-size: .6rem;
+}
+
+.header-box img {
+	float: right;
+	height: 1.3rem;
+	width: 1.3rem;
+	margin: .5rem .5rem 0;
+}
+
+/*********** recommend box ***************/
+.recommend-box {
+	height: 5rem;
+	background: white;
+	margin: .5rem 0;
+}
+
+.recommend-content {
+	width: 48%;
+	display: inline-block;
+	text-align: center;
+	margin: .5rem 0;
+	position: relative;
+}
+
+.recommend-content::after {
+	content: " ";
+	position: absolute;
+	height: 2rem;
+	width: 80%;
+	right: 1.2rem;
+	top: -.5rem;
+	border-top: 2px solid #dadada;
+}
+
+.re1::before {
+	content: ' ';
+	position: absolute;
+	height: 1.5rem;
+	width: 1rem;
+	left: 11rem;
+	border-right: 2px solid #dadada;
+}
+
+/*********** content box ***************/
+.tab {
+	width: 100%;
+	background: white;
+	height: 3rem;
+	line-height: 3rem;
+	border-top: 1px solid #dadada;
+}
+
+.tab img {
+	margin: .5rem;
+	float: left;
+}
+
+.tab label {
+	font-size: .6rem;
+	color: #ccc;
+}
+
+.find1, .find2, .find3 {
+	margin: .8rem 0;
+}
+
+.block-space-end {
+	height: 3.2rem;
+}
