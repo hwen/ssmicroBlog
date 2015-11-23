@@ -4,14 +4,14 @@
 	background-color: white;
 	position:fixed;
 	top: 0;
-	height: 2.3rem;
+	line-height: 3.5rem;
 	border-bottom:1px solid #dadada;
 	z-index: 2;
 }
 
 .nav-row {
 	text-align: center;
-	line-height: 2.3rem;
+	line-height: 3.5rem;
 }
 
 .nav-bar .icon {
@@ -25,7 +25,7 @@
 }
 
 .nav-bar .user-name {
-	font-size: 1.38rem;
+	font-size: 1.5rem;
 	position: relative;
 }
 
@@ -34,9 +34,9 @@
 	background-size: 1.1rem .60rem;
 	width: 1.1rem; height: .60rem;
 	content: ' ';
-	position: absolute;
-	margin-top: 1rem;
 	margin-left: .2rem;
+	bottom: 1.5rem;
+	position: absolute;
 }
 
 .tools {
@@ -46,9 +46,9 @@
 }
 
 .nav-row img {
-	width: 1.63rem;
-	height: 1.5rem;
-	margin-top: .3rem;
+	width: 2rem;
+	height: 1.8rem;
+	margin-top: .6rem;
 	-webkit-transition: width 1s;
 	transition: width 1s;
 }

@@ -5,31 +5,31 @@ body {
 }
 
 .header-box {
-	height: 2.5rem;
+	height: 3rem;
 	background: white;
 	position: relative;
 }
 
 .header-box input {
-	height: 1.3rem;
-	width: 80%;
-	border-radius: 20px;
+	height: 2rem;
+	margin: .3rem .3rem;
+	width: 75%;
+	border-radius: 15px;
 	border:1px solid gray;
-	line-height: 1.3rem;
-	margin: .5rem .5rem;
 	position: absolute;
 	background: url(../resource/search.png) left no-repeat;
+	background-size: 1.8rem 1.8rem;
 	background-position: .5rem;
 	background-color: #dadada;
 	color: gray;
-	padding-left: 1.8rem;
-	font-size: .6rem;
+	padding-left: 2.5rem;
+	font-size: 1rem;
 }
 
 .header-box img {
 	float: right;
-	height: 1.3rem;
-	width: 1.3rem;
+	height: 2rem;
+	width: 2rem;
 	margin: .5rem .5rem 0;
 }
 
@@ -71,18 +71,21 @@ body {
 .tab {
 	width: 100%;
 	background: white;
-	height: 3rem;
-	line-height: 3rem;
+	height: 4rem;
+	line-height: 4rem;
 	border-top: 1px solid #dadada;
+	font-size: 1.3rem;
 }
 
 .tab img {
-	margin: .5rem;
+	margin: .5rem .8rem;
+	height: 3rem;
+	width: 3rem;
 	float: left;
 }
 
 .tab label {
-	font-size: .6rem;
+	font-size: .9rem;
 	color: #ccc;
 }
 

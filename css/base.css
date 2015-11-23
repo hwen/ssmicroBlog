@@ -1,13 +1,13 @@
 
 /************control*************/
 body {
-	font-family:Tahoma,Arial,Roboto,"Droid Sans","Helvetica Neue","Droid Sans Fallback","Heiti SC",sans-self;
+	font-family:Roboto,Tahoma,Arial,"Droid Sans","Helvetica Neue","Droid Sans Fallback","Heiti SC",sans-self;
   margin: 0;
   padding: 0;
 }
 
 .txt-xxs {
-	font-size:.8rem;
+	font-size:.9rem;
 }
 
 .txt-xs {

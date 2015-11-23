@@ -5,58 +5,68 @@
 	background-color: white;
 	position:fixed;
 	top: 0;
-	height: 2.3rem;
+	height: 3rem;
 	border-bottom:1px solid #dadada;
 	z-index: 2;
 }
 
 .header-box .left {
 	float: left;
-	width: 3rem;
+	width: 4rem;
+	text-align: center;
 	margin-left: .2rem;
 	line-height: 2.3rem;
 	display: inline-block;
-	font-size: .9rem;
+	font-size: 1.2rem;
 }
 
 .header-box .right {
+	text-align: center;
 	float: right;
-	width: 3rem;
+	width: 4rem;
 	display:inline-block;
 }
 
 .right img{
-	width: 1.63rem;
-	height: 1.5rem;
+	width: 2rem;
+	height: 1.8rem;
 	margin-top: .3rem;
 }
 
 .header-box .middle {
 	text-align: center;
 	line-height: 2.3rem;
-	font-size: 1.2rem;
+	font-size: 1.6rem;
 }
 
 /********** search-bar **********/
 .search-container {
-	margin-top: 2.3rem;
-	height: 2.3rem;
+	height: 3rem;
+	margin-top: 3rem;
 	background: #dadada;
 }
 
 .search-bar {
-	height: 1.8rem;
-	background: #dadada;
+	height: 3rem;
+	padding: .3rem .5rem;
+	display: flex;
+	display: -webkit-flex;
+	flex-flow: row nowrap;
+	-webkit-flex-flow:row nowrap ;
+	justify-content: center;
+	-webkit-justify-content: center;
 }
 
 .search-bar input {
-	height: 1.2rem;
-	width: 85%;
-	margin: .4rem .5rem 0 .5rem;
+	flex-grow: 1;
+	-webkit-flex-grow: 1;
+	height: 1.8rem;
+	width: auto;
 	border-radius: 15px;
-	font-size:.7rem;
-	padding-left: 2rem;
+	font-size:1rem;
+	padding-left: 2.5rem;
 	background: url(../resource/search.png) left no-repeat;
+	background-size: 1.5rem 1.5rem;
 	background-position: .5rem;
 	background-color: white;
 }
@@ -68,11 +78,14 @@
 }
 
 .icon-sys {
-	height: 3.5rem;
-	line-height: 3.5rem;
+	height: 4.5rem;
+	line-height: 4.5rem;
+	font-size: 1.5rem;
 }
 
 .icon-sys img{
+	width: 3rem;
+	height: 3rem;
 	margin-top: .8rem;
 	margin-left: .5rem;
 }
@@ -83,7 +96,7 @@
 }
 
 .icon-text {
-	margin-left: 3rem;
+	margin-left: 4rem;
 	border-bottom: 1px solid #dadada;
 	position: relative;
 }
