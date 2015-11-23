@@ -18,13 +18,17 @@
 	display:-webkit-flex;
 	flex-flow: row nowrap;
 	-webkit-flex-flow: row nowrap;
-	
+	justify-content: center;
+	-webkit-justify-content: center;
+	align-items: center;
+	-webkit-align-items: center;
 }
 
 .footer-bar .icon {
-	float: left;
-	width: 4.8rem;
-	margin:.3rem auto 0;
+	flex-grow: 1;
+	-webkit-flex-grow: 1;
+	flex-shrink: 1;
+	-webkit-flex-shrink: 1;
 }
 
 .icon-home, .icon-mes, .icon-find, .icon-me {
