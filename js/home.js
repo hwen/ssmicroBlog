@@ -150,113 +150,113 @@ $(document).ready(function(){
 		return newText;
 	};
 
-	//到页面底部加载更多
-	function slideDownStep1(dist){
-		var sd1 = document.getElementById('sd1'),
-			sd2 = document.getElementById('sd2');
+	// //到页面底部加载更多
+	// function slideDownStep1(dist){
+	// 	var sd1 = document.getElementById('sd1'),
+	// 		sd2 = document.getElementById('sd2');
 
-		var img = document.getElementById('reflesh-icon');
-		var info = document.getElementById('reflesh-info');
-		img.setAttribute('src', '../resource/down.png');
-		info.innerHTML = '下拉刷新';
-		sd2.style.display = "none";
-		sd1.style.display = "block";
-		sd1.style.height = 1 - parseInt(dist) + "px";
-	}
+	// 	var img = document.getElementById('reflesh-icon');
+	// 	var info = document.getElementById('reflesh-info');
+	// 	img.setAttribute('src', '../resource/down.png');
+	// 	info.innerHTML = '下拉刷新';
+	// 	sd2.style.display = "none";
+	// 	sd1.style.display = "block";
+	// 	sd1.style.height = 1 - parseInt(dist) + "px";
+	// }
 
-	function slideDownStep2() {
-		var sd1 = document.getElementById("sd1"),
-			sd2 = document.getElementById("sd2");
-		sd1.style.display = "none";
-		sd1.style.height = "20px";
-		sd2.style.display = "block";
-	}
+	// function slideDownStep2() {
+	// 	var sd1 = document.getElementById("sd1"),
+	// 		sd2 = document.getElementById("sd2");
+	// 	sd1.style.display = "none";
+	// 	sd1.style.height = "20px";
+	// 	sd2.style.display = "block";
+	// }
 
-	function slideDownStep3(){
-		var sd1 = document.getElementById('sd1'),
-			sd2 = document.getElementById('sd2');
-		sd1.style.display = "none";
-		sd2.style.display = "none";
-	}
+	// function slideDownStep3(){
+	// 	var sd1 = document.getElementById('sd1'),
+	// 		sd2 = document.getElementById('sd2');
+	// 	sd1.style.display = "none";
+	// 	sd2.style.display = "none";
+	// }
 
-	function kt_touch(contentId, way){
-		var _start = 0,
-			_end = 0,
-			_content = document.getElementById(contentId);
-		_content.addEventListener("touchstart",touchStart,false);
-		_content.addEventListener("touchmove",touchMove,false);
-		_content.addEventListener("touchend",touchEnd,false);
+	// function kt_touch(contentId, way){
+	// 	var _start = 0,
+	// 		_end = 0,
+	// 		_content = document.getElementById(contentId);
+	// 	_content.addEventListener("touchstart",touchStart,false);
+	// 	_content.addEventListener("touchmove",touchMove,false);
+	// 	_content.addEventListener("touchend",touchEnd,false);
 
-		function touchStart(event){
-			event.preventDefault();
-			if (!event.touches.length) { return; }
-			var touch = event.touches[0];
-			if (way == "x") {
-				_start = touch.pageX;
-			} else {
-				_start = touch.pageY;
-			}
-		}
+	// 	function touchStart(event){
+	// 		event.preventDefault();
+	// 		if (!event.touches.length) { return; }
+	// 		var touch = event.touches[0];
+	// 		if (way == "x") {
+	// 			_start = touch.pageX;
+	// 		} else {
+	// 			_start = touch.pageY;
+	// 		}
+	// 	}
 
-		function touchMove(event){
-			event.preventDefault();
-			if (!event.touches.length) { return; }
+	// 	function touchMove(event){
+	// 		event.preventDefault();
+	// 		if (!event.touches.length) { return; }
 
-			var touch = event.touches[0];
+	// 		var touch = event.touches[0];
 
-			if (way === "x") {
-				_end = (_start - touch.pageX);
-			} else {
-				_end = (_start - touch.pageY);
-				if (_end < -10) {
-					slideDownStep1(_end);
-				}
-				if(_end < -80 ){
-					var img = document.getElementById('reflesh-icon');
-					var info = document.getElementById('reflesh-info');
-					img.setAttribute('src', '../resource/up.png');
-					info.innerHTML = '释放更新';
-				}
-				if(_end >= -10){
-					slideDownStep3();
-				}
-			}
+	// 		if (way === "x") {
+	// 			_end = (_start - touch.pageX);
+	// 		} else {
+	// 			_end = (_start - touch.pageY);
+	// 			if (_end < -10) {
+	// 				slideDownStep1(_end);
+	// 			}
+	// 			if(_end < -80 ){
+	// 				var img = document.getElementById('reflesh-icon');
+	// 				var info = document.getElementById('reflesh-info');
+	// 				img.setAttribute('src', '../resource/up.png');
+	// 				info.innerHTML = '释放更新';
+	// 			}
+	// 			if(_end >= -10){
+	// 				slideDownStep3();
+	// 			}
+	// 		}
 
-		}
+	// 	}
 
-		function touchEnd(event){
-			if (_end <0) {
-				slideDownStep2();
-				var oldPost = document.querySelector('.content-box-container');
-				oldPost = oldPost.children[1].getAttribute('data-id');
-				var api = 'https://api.weibo.com/2/statuses/friends_timeline/ids.json?access_token=2.00lYYxNEGUv6HEbba92b7e5cWAw5sD';
-				$.ajax({
-					url:api,
-					type:"get",
-					crossDomain:true,
-					dataType:"jsonp",
-					success:function(data){
-						var data = data.data.statuses;
-						if(oldPost===data[0]){
-							console.log('没有更新');
-						} else {
-							var contentBox = document.querySelector('.content-box');
-							var orgBox = contentBox.cloneNode(true);
-							var container = document.querySelector('.content-box-container');
-							container.innerHTML = '';
-							container.appendChild(orgBox);
-							getPost(1);
-						}
-					}
-				});
-				setTimeout(function(){
-					slideDownStep3();
-				},1000);
-			}
-		}
-	}
-	//到页面底部加载更多 end
+	// 	function touchEnd(event){
+	// 		if (_end <0) {
+	// 			slideDownStep2();
+	// 			var oldPost = document.querySelector('.content-box-container');
+	// 			oldPost = oldPost.children[1].getAttribute('data-id');
+	// 			var api = 'https://api.weibo.com/2/statuses/friends_timeline/ids.json?access_token=2.00lYYxNEGUv6HEbba92b7e5cWAw5sD';
+	// 			$.ajax({
+	// 				url:api,
+	// 				type:"get",
+	// 				crossDomain:true,
+	// 				dataType:"jsonp",
+	// 				success:function(data){
+	// 					var data = data.data.statuses;
+	// 					if(oldPost===data[0]){
+	// 						console.log('没有更新');
+	// 					} else {
+	// 						var contentBox = document.querySelector('.content-box');
+	// 						var orgBox = contentBox.cloneNode(true);
+	// 						var container = document.querySelector('.content-box-container');
+	// 						container.innerHTML = '';
+	// 						container.appendChild(orgBox);
+	// 						getPost(1);
+	// 					}
+	// 				}
+	// 			});
+	// 			setTimeout(function(){
+	// 				slideDownStep3();
+	// 			},1000);
+	// 		}
+	// 	}
+	// }
+	// //到页面底部加载更多 end
 
-	kt_touch("content-box-container",'y');
+	// kt_touch("content-box-container",'y');
 	getPost(1);
 });

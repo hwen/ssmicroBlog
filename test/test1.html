@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<style>
+	body {
+		margin:0;
+		padding:0;
+	}
+
+	.flex-box {
+		height:500px;
+		width:100%;
+		background-color:#89479B;
+
+		display:flex;
+		display: -webkit-flex;
+		flex-flow: row wrap;
+		-webkit-flex-flow: row wrap;
+		justify-content: center;
+		-webkit-justify-content: center;
+		align-items: center;
+		-webkit-align-items: center;
+	}
+
+	.item {
+		flex-grow: 1;
+		-webkit-flex-grow: 1;
+		flex-shrink: 1;
+		-webkit-flex-shrink: 1;
+	}
+
+	.item {
+		width:100px;
+		height:50px;
+		background-color:greenyellow;
+
+		margin:0 10px;
+		display:flex;
+		display:-webkit-flex;
+		flex-flow: row nowrap;
+		-webkit-flex-flow: row nowrap;
+		justify-content: center;
+		-webkit-justify-content: center;
+		align-items: center;
+		-webkit-align-items: center;
+	}
+
+	.subitem {
+		background:#E88024;
+		width:50%;
+
+		flex-grow: 1;
+		-webkit-flex-grow: 1;
+		flex-shrink: 1;
+		-webkit-flex-shrink: 1;
+	}
+
+	.subitem label{
+		line-height:50px;
+	}
+
+	 img {
+		height:20px;
+	}
+</style>
+<body>
+<div class="flex-box">
+	<div class="item"><img class="sub" src="../resource/search.png" alt=""><label class="sub" for="">一些</label></div>
+	<div class="item"><div class="subitem"><img class="sub" src="../resource/search.png" alt=""><label class="sub" for="">一些</label></div></div>
+	<div class="item"><div class="subitem"><img class="sub" src="../resource/search.png" alt=""><label class="sub" for="">一些</label></div></div>
+	<div class="item"><div class="subitem"><img class="sub" src="../resource/search.png" alt=""><label class="sub" for="">一些</label></div></div>
+	<div class="item"><div class="subitem"><img class="sub" src="../resource/search.png" alt=""><label class="sub" for="">一些</label></div></div>
+	<div class="item"><div class="subitem"><img class="sub" src="../resource/search.png" alt=""><label class="sub" for="">一些</label></div></div>
+	<div class="item"><img class="sub" src="../resource/search.png" alt=""><label class="sub" for="">一些</label></div>
+</div>	
+</body>
+</html>

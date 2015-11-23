@@ -7,11 +7,15 @@ body {
 }
 
 .txt-xxs {
-	font-size:.625rem;
+	font-size:.8rem;
 }
 
-.size-md {	
-	font-size: 2rem;
+.txt-xs {
+  font-size: 1.2rem;
+}
+
+.txt-md {	
+	font-size: 1.5rem;
 }
 
 .light-gray {
