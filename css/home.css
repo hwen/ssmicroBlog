@@ -26,15 +26,22 @@ body {
 }
 
 /************contentbox header*************/
-.reflesh img {
-	height: 1.2rem;
-	width: .9rem;
+.reflesh-box img {
+	height: 1.4rem;
+	width: 1rem;
+	position: relative;
+	margin-left: -35px;
+}
+
+#sd2 img {
+	height: 1rem;
+	width: 1rem;
 	position: relative;
 	margin-left: -35px;
 }
 
 #sd2 {
-	margin-top: 8px;
+	margin:.8rem;
 	position: relative;
 }
 
@@ -47,7 +54,7 @@ body {
 }
 
 .reflesh label {
-	font-size:.7rem;
+	font-size:.9rem;
 	color:gray;
 	position: absolute;
 	margin-left: 1rem;
